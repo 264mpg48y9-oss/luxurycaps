@@ -10,16 +10,15 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Segoe UI, sans-serif;
+    font-family:Arial,sans-serif;
 }
 
 body{
-    background:#f5f5f5;
+    background:#f4f4f4;
 }
 
 header{
     background:#000;
-    color:#fff;
     padding:20px 8%;
 }
 
@@ -30,15 +29,18 @@ nav{
 }
 
 .logo{
-    font-size:30px;
-    font-weight:bold;
     color:gold;
+    font-size:32px;
+    font-weight:bold;
 }
 
 nav ul{
-    list-style:none;
     display:flex;
-    gap:25px;
+    list-style:none;
+}
+
+nav ul li{
+    margin-left:25px;
 }
 
 nav ul li a{
@@ -46,37 +48,37 @@ nav ul li a{
     text-decoration:none;
 }
 
-.page-title{
+.hero{
     text-align:center;
-    padding:50px 20px;
+    padding:60px 20px;
+    background:white;
 }
 
-.page-title h1{
-    font-size:48px;
-    color:#111;
+.hero h1{
+    font-size:50px;
+    margin-bottom:10px;
 }
 
-.page-title p{
+.hero p{
     color:#666;
-    margin-top:10px;
 }
 
 .products{
-    padding:20px 8% 80px;
+    padding:60px 8%;
 }
 
-.product-grid{
+.grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:30px;
+    gap:25px;
 }
 
 .card{
     background:white;
-    border-radius:12px;
+    border-radius:10px;
     overflow:hidden;
-    box-shadow:0 5px 20px rgba(0,0,0,.1);
-    transition:.3s;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    transition:0.3s;
 }
 
 .card:hover{
@@ -89,35 +91,29 @@ nav ul li a{
     object-fit:cover;
 }
 
-.card-content{
+.info{
     padding:20px;
     text-align:center;
 }
 
-.card-content h3{
-    margin-bottom:10px;
-}
-
 .price{
-    font-size:24px;
     color:#c9a227;
+    font-size:24px;
     font-weight:bold;
-    margin-bottom:15px;
+    margin:10px 0;
 }
 
 .btn{
-    width:100%;
-    padding:12px;
-    border:none;
     background:black;
     color:white;
+    border:none;
+    padding:12px 25px;
     cursor:pointer;
     border-radius:5px;
-    font-size:16px;
 }
 
 .btn:hover{
-    background:#c9a227;
+    background:gold;
     color:black;
 }
 
@@ -125,7 +121,7 @@ footer{
     background:black;
     color:white;
     text-align:center;
-    padding:25px;
+    padding:20px;
 }
 </style>
 </head>
@@ -139,71 +135,52 @@ footer{
 <li><a href="index.html">Home</a></li>
 <li><a href="shop.html">Shop</a></li>
 <li><a href="cart.html">Cart</a></li>
-<li><a href="contact.html">Contact</a></li>
 </ul>
 </nav>
 </header>
 
-<section class="page-title">
-<h1>Luxury Cap Collection</h1>
-<p>Premium designs crafted for style and comfort.</p>
+<section class="hero">
+<h1>Luxury Face Caps</h1>
+<p>Discover our premium collection.</p>
 </section>
 
 <section class="products">
 
-<div class="product-grid">
+<div class="grid">
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=800&q=80" alt="Cap">
-<div class="card-content">
+<img src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=800&q=80">
+<div class="info">
 <h3>Black Signature Cap</h3>
 <p class="price">$120</p>
-<button class="btn">Add to Cart</button>
+<button class="btn" onclick="addToCart('Black Signature Cap',120)">Add to Cart</button>
 </div>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=800&q=80" alt="Cap">
-<div class="card-content">
+<img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=800&q=80">
+<div class="info">
 <h3>Royal Navy Cap</h3>
 <p class="price">$150</p>
-<button class="btn">Add to Cart</button>
+<button class="btn" onclick="addToCart('Royal Navy Cap',150)">Add to Cart</button>
 </div>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80" alt="Cap">
-<div class="card-content">
+<img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80">
+<div class="info">
 <h3>Gold Edition Cap</h3>
 <p class="price">$180</p>
-<button class="btn">Add to Cart</button>
+<button class="btn" onclick="addToCart('Gold Edition Cap',180)">Add to Cart</button>
 </div>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1521369909029-2afed882baee?auto=format&fit=crop&w=800&q=80" alt="Cap">
-<div class="card-content">
-<h3>Urban Elite Cap</h3>
-<p class="price">$135</p>
-<button class="btn">Add to Cart</button>
-</div>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80" alt="Cap">
-<div class="card-content">
-<h3>Diamond Series Cap</h3>
-<p class="price">$220</p>
-<button class="btn">Add to Cart</button>
-</div>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80" alt="Cap">
-<div class="card-content">
-<h3>Limited Edition Cap</h3>
-<p class="price">$250</p>
-<button class="btn">Add to Cart</button>
+<img src="https://images.unsplash.com/photo-1521369909029-2afed882baee?auto=format&fit=crop&w=800&q=80">
+<div class="info">
+<h3>Elite Street Cap</h3>
+<p class="price">$200</p>
+<button class="btn" onclick="addToCart('Elite Street Cap',200)">Add to Cart</button>
 </div>
 </div>
 
@@ -216,224 +193,27 @@ footer{
 </footer>
 
 <script>
-
-const products = [
-{
-name: "Black Signature Cap",
-price: 120
-},
-{
-name: "Royal Navy Cap",
-price: 150
-},
-{
-name: "Gold Edition Cap",
-price: 180
-},
-{
-name: "Urban Elite Cap",
-price: 135
-},
-{
-name: "Diamond Series Cap",
-price: 220
-},
-{
-name: "Limited Edition Cap",
-price: 250
-}
-];
-
-const buttons = document.querySelectorAll(".btn");
-
-buttons.forEach((button,index)=>{
-
-button.addEventListener("click",()=>{
+function addToCart(name, price){
 
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-const product = products[index];
+let item = cart.find(product => product.name === name);
 
-const existingProduct = cart.find(
-item => item.name === product.name
-);
-
-if(existingProduct){
-existingProduct.quantity += 1;
+if(item){
+    item.quantity += 1;
 }else{
-cart.push({
-name: product.name,
-price: product.price,
-quantity: 1
-});
+    cart.push({
+        name: name,
+        price: price,
+        quantity: 1
+    });
 }
 
-localStorage.setItem(
-"cart",
-JSON.stringify(cart)
-);
+localStorage.setItem("cart", JSON.stringify(cart));
 
-button.innerText = "Added ✓";
-
-setTimeout(()=>{
-button.innerText = "Add to Cart";
-},1500);
-
-});
-
-});
-
-<script>
-
-const products = [
-{
-name: "Black Signature Cap",
-price: 120
-},
-{
-name: "Royal Navy Cap",
-price: 150
-},
-{
-name: "Gold Edition Cap",
-price: 180
-},
-{
-name: "Urban Elite Cap",
-price: 135
-},
-{
-name: "Diamond Series Cap",
-price: 220
-},
-{
-name: "Limited Edition Cap",
-price: 250
+alert(name + " added to cart!");
 }
-];
-
-const buttons = document.querySelectorAll(".btn");
-
-buttons.forEach((button,index)=>{
-
-button.addEventListener("click",()=>{
-
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-const product = products[index];
-
-const existingProduct = cart.find(
-item => item.name === product.name
-);
-
-if(existingProduct){
-existingProduct.quantity += 1;
-}else{
-cart.push({
-name: product.name,
-price: product.price,
-quantity: 1
-});
-}
-
-localStorage.setItem(
-"cart",
-JSON.stringify(cart)
-);
-
-button.innerText = "Added ✓";
-
-setTimeout(()=>{
-button.innerText = "Add to Cart";
-},1500);
-
-});
-
-});
-
-<script>
-
-const products = [
-{
-name: "Black Signature Cap",
-price: 120
-},
-{
-name: "Royal Navy Cap",
-price: 150
-},
-{
-name: "Gold Edition Cap",
-price: 180
-},
-{
-name: "Urban Elite Cap",
-price: 135
-},
-{
-name: "Diamond Series Cap",
-price: 220
-},
-{
-name: "Limited Edition Cap",
-price: 250
-}
-];
-
-const buttons = document.querySelectorAll(".btn");
-
-buttons.forEach((button,index)=>{
-
-button.addEventListener("click",()=>{
-
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-const product = products[index];
-
-const existingProduct = cart.find(
-item => item.name === product.name
-);
-
-if(existingProduct){
-existingProduct.quantity += 1;
-}else{
-cart.push({
-name: product.name,
-price: product.price,
-quantity: 1
-});
-}
-
-localStorage.setItem(
-"cart",
-JSON.stringify(cart)
-);
-
-button.innerText = "Added ✓";
-
-setTimeout(()=>{
-button.innerText = "Add to Cart";
-},1500);
-
-});
-
-});
-
 </script>
-Give feedback
-function updateCartCount(){
 
-let cart = JSON.parse(
-localStorage.getItem("cart")
-) || [];
-
-let count = 0;
-
-cart.forEach(item=>{
-count += item.quantity;
-});
-
-document.getElementById("cart-count").textContent = count;
-}
-
-updateCartCount();
+</body>
+</html>

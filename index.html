@@ -3,46 +3,36 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Royal Caps - Luxury Face Caps</title>
+<title>Royal Caps</title>
 
 <style>
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Segoe UI',sans-serif;
+    font-family:Arial, sans-serif;
 }
 
 body{
-    background:#f8f8f8;
+    background:#fff;
 }
 
 header{
-    height:100vh;
-    background:
-    linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
-    url('https://images.unsplash.com/photo-1521369909029-2afed882baee?auto=format&fit=crop&w=1600&q=80');
-    background-size:cover;
-    background-position:center;
+    background:#000;
     color:white;
 }
 
-<nav>
-    <div class="logo">ROYAL CAPS</div>
-
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="shop.html">Shop</a></li>
-        <li><a href="cart.html">Cart</a></li>
-        <li><a href="contact.html">Contact</a></li>
-    </ul>
-</nav>
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
 }
 
 .logo{
-    font-size:32px;
+    color:gold;
+    font-size:30px;
     font-weight:bold;
-    letter-spacing:3px;
 }
 
 nav ul{
@@ -51,178 +41,137 @@ nav ul{
 }
 
 nav ul li{
-    margin-left:30px;
+    margin-left:25px;
 }
 
 nav ul li a{
     color:white;
     text-decoration:none;
-    font-weight:500;
 }
 
-<a href="shop.html">
-    <button>Shop Now</button>
-</a>
+.hero{
+    height:90vh;
+    background:
+    linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
+    url("https://images.unsplash.com/photo-1521369909029-2afed882baee?auto=format&fit=crop&w=1600&q=80");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+    color:white;
+}
 
 .hero h1{
-    font-size:65px;
+    font-size:60px;
     margin-bottom:20px;
 }
 
 .hero p{
     font-size:22px;
-    margin-bottom:30px;
+    margin-bottom:25px;
 }
 
-.hero button{
+.shop-btn{
     background:gold;
-    border:none;
-    padding:15px 40px;
-    font-size:18px;
-    cursor:pointer;
+    color:black;
+    padding:15px 35px;
+    text-decoration:none;
+    font-weight:bold;
     border-radius:5px;
 }
 
-.products{
+.featured{
     padding:80px 8%;
 }
 
-.products h2{
+.featured h2{
     text-align:center;
-    font-size:40px;
-    margin-bottom:50px;
+    margin-bottom:40px;
 }
 
-.grid{
+.cards{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:30px;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
 }
 
 .card{
-    background:white;
-    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    border-radius:10px;
     overflow:hidden;
-    box-shadow:0 5px 20px rgba(0,0,0,.1);
-    transition:.3s;
-}
-
-.card:hover{
-    transform:translateY(-10px);
 }
 
 .card img{
     width:100%;
-    height:350px;
+    height:300px;
     object-fit:cover;
 }
 
-.card-content{
-    padding:20px;
+.card h3{
+    padding:15px;
     text-align:center;
-}
-
-.card-content h3{
-    margin-bottom:10px;
-}
-
-.price{
-    color:#c9a227;
-    font-size:24px;
-    font-weight:bold;
-}
-
-.btn{
-    margin-top:15px;
-    padding:12px 25px;
-    background:black;
-    color:white;
-    border:none;
-    cursor:pointer;
-    border-radius:5px;
 }
 
 footer{
     background:black;
     color:white;
     text-align:center;
-    padding:25px;
+    padding:20px;
 }
 </style>
 </head>
 <body>
 
 <header>
-
 <nav>
 <div class="logo">ROYAL CAPS</div>
 
 <ul>
-<li><a href="#">Home</a></li>
-<li><a href="#">Shop</a></li>
-<li><a href="#">Collections</a></li>
-<li><a href="#">Contact</a></li>
+<li><a href="index.html">Home</a></li>
+<li><a href="shop.html">Shop</a></li>
+<li><a href="cart.html">Cart</a></li>
 </ul>
 </nav>
-
-<div class="hero">
-<h1>Luxury Face Caps</h1>
-<p>Premium Quality • Exclusive Designs • Worldwide Shipping</p>
-<button>Shop Now</button>
-</div>
-
 </header>
 
-<section class="products">
+<section class="hero">
+<h1>Luxury Face Caps</h1>
+<p>Premium Style. Premium Quality.</p>
 
+<a href="shop.html" class="shop-btn">
+Shop Collection
+</a>
+</section>
+
+<section class="featured">
 <h2>Featured Collection</h2>
 
-<div class="grid">
+<div class="cards">
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=800&q=80">
-<div class="card-content">
 <h3>Black Signature Cap</h3>
-<p class="price">$120</p>
-<button class="btn">Add to Cart</button>
-</div>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80">
-<div class="card-content">
-<h3>Royal Gold Edition</h3>
-<p class="price">$180</p>
-<button class="btn">Add to Cart</button>
-</div>
 </div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=800&q=80">
-<div class="card-content">
-<h3>Navy Elite Cap</h3>
-<p class="price">$150</p>
-<button class="btn">Add to Cart</button>
+<h3>Royal Navy Cap</h3>
 </div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80">
+<h3>Gold Edition Cap</h3>
 </div>
 
 </div>
-
 </section>
 
 <footer>
-<p>© 2026 Royal Caps. Luxury Headwear Brand.</p>
+<p>© 2026 Royal Caps. All Rights Reserved.</p>
 </footer>
-
-<script>
-const buttons = document.querySelectorAll(".btn");
-
-buttons.forEach(btn=>{
-btn.addEventListener("click",()=>{
-alert("Item added to cart!");
-});
-});
-</script>
 
 </body>
 </html>

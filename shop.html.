@@ -216,14 +216,224 @@ footer{
 </footer>
 
 <script>
-const cartButtons = document.querySelectorAll(".btn");
 
-cartButtons.forEach(button => {
-    button.addEventListener("click", () => {
-        alert("Luxury cap added to cart!");
-    });
+const products = [
+{
+name: "Black Signature Cap",
+price: 120
+},
+{
+name: "Royal Navy Cap",
+price: 150
+},
+{
+name: "Gold Edition Cap",
+price: 180
+},
+{
+name: "Urban Elite Cap",
+price: 135
+},
+{
+name: "Diamond Series Cap",
+price: 220
+},
+{
+name: "Limited Edition Cap",
+price: 250
+}
+];
+
+const buttons = document.querySelectorAll(".btn");
+
+buttons.forEach((button,index)=>{
+
+button.addEventListener("click",()=>{
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+const product = products[index];
+
+const existingProduct = cart.find(
+item => item.name === product.name
+);
+
+if(existingProduct){
+existingProduct.quantity += 1;
+}else{
+cart.push({
+name: product.name,
+price: product.price,
+quantity: 1
 });
-</script>
+}
 
-</body>
-</html>
+localStorage.setItem(
+"cart",
+JSON.stringify(cart)
+);
+
+button.innerText = "Added ✓";
+
+setTimeout(()=>{
+button.innerText = "Add to Cart";
+},1500);
+
+});
+
+});
+
+<script>
+
+const products = [
+{
+name: "Black Signature Cap",
+price: 120
+},
+{
+name: "Royal Navy Cap",
+price: 150
+},
+{
+name: "Gold Edition Cap",
+price: 180
+},
+{
+name: "Urban Elite Cap",
+price: 135
+},
+{
+name: "Diamond Series Cap",
+price: 220
+},
+{
+name: "Limited Edition Cap",
+price: 250
+}
+];
+
+const buttons = document.querySelectorAll(".btn");
+
+buttons.forEach((button,index)=>{
+
+button.addEventListener("click",()=>{
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+const product = products[index];
+
+const existingProduct = cart.find(
+item => item.name === product.name
+);
+
+if(existingProduct){
+existingProduct.quantity += 1;
+}else{
+cart.push({
+name: product.name,
+price: product.price,
+quantity: 1
+});
+}
+
+localStorage.setItem(
+"cart",
+JSON.stringify(cart)
+);
+
+button.innerText = "Added ✓";
+
+setTimeout(()=>{
+button.innerText = "Add to Cart";
+},1500);
+
+});
+
+});
+
+<script>
+
+const products = [
+{
+name: "Black Signature Cap",
+price: 120
+},
+{
+name: "Royal Navy Cap",
+price: 150
+},
+{
+name: "Gold Edition Cap",
+price: 180
+},
+{
+name: "Urban Elite Cap",
+price: 135
+},
+{
+name: "Diamond Series Cap",
+price: 220
+},
+{
+name: "Limited Edition Cap",
+price: 250
+}
+];
+
+const buttons = document.querySelectorAll(".btn");
+
+buttons.forEach((button,index)=>{
+
+button.addEventListener("click",()=>{
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+const product = products[index];
+
+const existingProduct = cart.find(
+item => item.name === product.name
+);
+
+if(existingProduct){
+existingProduct.quantity += 1;
+}else{
+cart.push({
+name: product.name,
+price: product.price,
+quantity: 1
+});
+}
+
+localStorage.setItem(
+"cart",
+JSON.stringify(cart)
+);
+
+button.innerText = "Added ✓";
+
+setTimeout(()=>{
+button.innerText = "Add to Cart";
+},1500);
+
+});
+
+});
+
+</script>
+Give feedback
+function updateCartCount(){
+
+let cart = JSON.parse(
+localStorage.getItem("cart")
+) || [];
+
+let count = 0;
+
+cart.forEach(item=>{
+count += item.quantity;
+});
+
+document.getElementById("cart-count").textContent = count;
+}
+
+updateCartCount();
